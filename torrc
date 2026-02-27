@@ -1,0 +1,21 @@
+SocksPort 0.0.0.0:9050
+
+DataDirectory /var/lib/tor
+Log notice stdout
+
+# ControlPort
+ControlPort 0.0.0.0:9051
+CookieAuthentication 0
+# Пароль (замени на свой!)
+HashedControlPassword 16:B0CC6201A5DCE83360F9B02DE8B8FBED5B528302151EDEAE870219AD1D
+
+# Интервал смены цепочки (минимум 10 секунд)
+MaxCircuitDirtiness 30
+
+# Включаем мосты
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+
+# Пример obfs4 мостов (замени на свои!)
+Bridge obfs4 159.69.206.35:9101 E32BB8DD5A8F8742F12F3BA4C9563B2A16E9F7B2 cert=l+KkYn5R8qJ2+8xqxNAIYXJkQ9CDRecNXqaxIyqSLoJyu9ExF2NvKKyKH5WsWOEjEI/Qag iat-mode=0
+Bridge obfs4 45.83.182.93:8009 073386E7DF7406AA248CDC978ED6FE25C1048645 cert=ElM84TKLLcNU8v0TvUbhyQwRVLGDfvHMUy0aHilfO4wQh2V+FJy/aJuDcdU9xJ4XC/jXAA iat-mode=0
