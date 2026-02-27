@@ -9,9 +9,10 @@ tor --hash-password mypassword
 
 [Get obfs4 bridges](https://bridges.torproject.org/)  
 ### Create torrc
+```
 sudo mkdir -p /opt/tor/  
 sudo nano /opt/tor/torrc
-
+```
 ### Install
 ```
 docker run -d --name tor -p 9050:9050 -p 9051:9051 -v /opt/tor/torrc:/etc/tor/torrc --restart unless-stopped n00b1k/tor-obfs4:1.0.7
